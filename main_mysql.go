@@ -95,7 +95,7 @@ func main(){
 	sqlOpen()
 	defer sqlClose()
 
-	configFile := "./config.yaml"
+	configFile := "/var/yaml/config_event.yaml"
 	sdk, err := fabsdk.New(config.FromFile(configFile))
 	if err != nil {
 		fmt.Println("实例化Fabric SDK失败: %v\n", err)
