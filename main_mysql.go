@@ -102,7 +102,7 @@ func main(){
 		return
 	}
 
-	chan_pvd := sdk.ChannelContext("mychannel", fabsdk.WithUser("Admin"), fabsdk.WithOrg("mmOrg"))
+	chan_pvd := sdk.ChannelContext("mmchannel", fabsdk.WithUser("Admin"), fabsdk.WithOrg("mmOrg"))
 
 	fmt.Println("=====ChaincodeEvent=======\n")
 	{
