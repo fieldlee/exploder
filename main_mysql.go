@@ -19,7 +19,7 @@ import (
 )
 //下面填写自己的数据库信息，看不懂英文？这都看不懂还学啥编程。不知道数据库信息？那还用啥数据库。
 var (
-	dbhostip="192.168.1.100"
+	dbhostip="192.168.0.204"
 	dbusername="root"
 	dbpassword="123456"
 	dbname="mmchannel"
@@ -119,14 +119,13 @@ func main(){
 		}
 		defer ec.Unregister(registration)
 
-		registration, notifier2, err := ec.RegisterChaincodeEvent("payment", `[0-9a-f]{64}`)
+		registration, notifier2, err := ec.RegisterChaincodeEvent("ledger", `[0-9a-f]{64}`)
 		if err != nil {
 			fmt.Println("failed to register chaincode event: %v\n", err)
 			return
 		}
 		defer ec.Unregister(registration)
 
-		fmt.Println("chaincode event registered successfully\n")
 		for ;; {
 			select {
 			case ccEvent := <-notifier:
