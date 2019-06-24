@@ -1,6 +1,6 @@
-CREATE DATABASE mychannel;
+CREATE DATABASE mmchannel;
 
-use mychannel;
+use mmchannel;
 
 -- ----------------------------
 --  Table structure for `transactions`
