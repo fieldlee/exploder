@@ -19,7 +19,7 @@ import (
 )
 //下面填写自己的数据库信息，看不懂英文？这都看不懂还学啥编程。不知道数据库信息？那还用啥数据库。
 var (
-	dbhostip="192.168.0.204"
+	dbhostip="192.168.1.31"
 	dbusername="root"
 	dbpassword="123456"
 	dbname="mmchannel"
@@ -35,7 +35,7 @@ var db *sql.DB
 
 func sqlOpen() {
 	var err error
-	db, err = sql.Open("mysql",dbusername+":"+dbpassword+"@tcp("+dbhostip+")/"+dbname+"?charset=utf8")
+	db, err = sql.Open("mysql",dbusername+":"+dbpassword+"@tcp("+dbhostip+":3310)/"+dbname+"?charset=utf8")
 	checkErr(err)
 }
 
